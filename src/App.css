@@ -1,10 +1,10 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
-.App-logo {
+/*.App-logo {
   height: 40vmin;
-}
+}*/
 
 .App-header {
   background-color: #282c34;
@@ -15,6 +15,25 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.app-header {
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 10px;
+}
+
+.filter-section {
+  padding: 15px;
+}
+
+.filter-section > div {
+  margin: 45px 10px;
+}
+
+.results-section {
+  margin: 45px 0;
 }
 
 .App-link {
