@@ -18,7 +18,9 @@ function App() {
         <div className="App container-fluid">
             <ReactiveBase
                 app="oers"
-                url="http://localhost:9200"
+                /*url="http://localhost:9200"*/
+                url="https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243"
+                credentials="elastic:h9dVdzv8lTF3krFV7kSWFbQa"
             >
                 <header className="row app-header">
                     <div className="app-title col-md-3">

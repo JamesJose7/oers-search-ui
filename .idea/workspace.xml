@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="01af4e9b-c4bb-4f30-a8da-4a0798ff322b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571175127935</updated>
-      <workItem from="1571175129945" duration="11974000" />
+      <workItem from="1571175129945" duration="13974000" />
     </task>
     <task id="LOCAL-00001" summary="Initial search UI with ReactiveBase">
       <created>1571180538714</created>
@@ -75,7 +74,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571180538715</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improved styles, added new fields for filtering">
+      <created>1571242158253</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571242158257</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changes for heroku deployment">
+      <created>1571244627874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571244627874</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +107,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial search UI with ReactiveBase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial search UI with ReactiveBase" />
+    <MESSAGE value="Improved styles, added new fields for filtering" />
+    <MESSAGE value="Changes for heroku deployment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes for heroku deployment" />
   </component>
 </project>
