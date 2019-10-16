@@ -29,11 +29,16 @@
 }
 
 .filter-section > div {
-  margin: 45px 10px;
+  padding: 30px 5px;
 }
 
 .results-section {
-  margin: 45px 0;
+  /*padding: 45px 0 !important;*/
+  border-left: 1px solid rgba(40,44,52, .1);
+}
+
+#selected-filters {
+  padding: 20px;
 }
 
 .App-link {

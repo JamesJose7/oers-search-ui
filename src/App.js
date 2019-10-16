@@ -15,7 +15,7 @@ const {ResultListWrapper} = ReactiveList;
 
 function App() {
     return (
-        <div className="App">
+        <div className="App container-fluid">
             <ReactiveBase
                 app="oers"
                 url="http://localhost:9200"
@@ -37,7 +37,7 @@ function App() {
                             ]}*/
                             highlight={true}
                             /*highlightField={['title', 'about']}*/
-                            highlightField="title"
+                            /*highlightField="title"*/
                             queryFormat="or"
                             fuzziness={0}
                             debounce={100}
@@ -53,51 +53,57 @@ function App() {
                     <div className="col-md-3 filter-section">
                         <div>
                             <DateRange
-                                componentId="DateSensor" dataField="mtime"/>
+                                componentId="DateSensor" dataField="date"/>
                         </div>
 
                         <div>
                             <MultiList
                                 componentId="FacetFilter"
-                                dataField="title.keyword"
-                                title="Type" />
+                                dataField="materialType.keyword"
+                                title="Type"
+                                react={{
+                                    "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "DateSensor"]
+                                }}
+                            />
                         </div>
 
                         <div>
                             <DynamicRangeSlider
                                 componentId="DynamicRangeSensor"
-                                dataField="id"
+                                dataField="year"
                                 stepValue={1}
                                 showHistogram={true}
                                 showFilter={true}
-                                interval={2}
+                                interval={1}
                                 rangeLabels={(min, max) => ({
-                                    start: min + ' id',
-                                    end: max + ' id',
+                                    start: min + '',
+                                    end: max + '',
                                 })}
                                 react={{
                                     and: ['SearchSensor', 'SearchResult'],
                                 }}
-                                renderTooltipData={data => (
+                                /*renderTooltipData={data => (
                                     <h5 style={{
                                         color: 'red',
                                         textDecoration: 'underline'
                                     }}>
                                         {data}
                                     </h5>
-                                )}
+                                )}*/
                             />
                         </div>
                     </div>
                     <div className="col-md-9 results-section">
-                        <div>
-                            <SelectedFilters showClearAll={true} clearAllLabel="Clear filters" />
+                        <div id="selected-filters">
+                            <SelectedFilters
+                                showClearAll={true}
+                                clearAllLabel="Clear filters" />
                         </div>
 
                         <div>
                             <ReactiveList
                                 react={{
-                                    "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "FacetFilter"]
+                                    "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "FacetFilter", "DateSensor"]
                                 }}
                                 componentId="SearchResult"
                             >
@@ -113,9 +119,17 @@ function App() {
                                                                 __html: item.title
                                                             }}
                                                         />
-                                                        <ResultList.Description>
-                                                            <p>{item.about}</p>
-                                                        </ResultList.Description>
+                                                        <ResultList.Description
+                                                            dangerouslySetInnerHTML={{
+                                                                __html: !item.about ? "-- No description --" : item.about
+                                                            }}
+                                                        />
+                                                            {/*<p>{item.about}</p>
+                                                            <a href={item.uri}>Source</a>*/}
+                                                        {/*</ResultList.Description>*/}
+                                                        <a href={item.uri}>Source</a>
+                                                        {/*<p>Id: {item._id}</p>
+                                                        <p>Id DB: {item.id}</p>*/}
                                                     </ResultList.Content>
                                                 </ResultList>
                                             ))
