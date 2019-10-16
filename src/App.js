@@ -55,14 +55,16 @@ function App() {
                     <div className="col-md-3 filter-section">
                         <div>
                             <DateRange
-                                componentId="DateSensor" dataField="date"/>
+                                title="Date picker"
+                                componentId="DateSensor"
+                                dataField="date"/>
                         </div>
 
                         <div>
                             <MultiList
                                 componentId="FacetFilter"
                                 dataField="materialType.keyword"
-                                title="Type"
+                                title="Categories"
                                 react={{
                                     "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "DateSensor"]
                                 }}
@@ -71,6 +73,7 @@ function App() {
 
                         <div>
                             <DynamicRangeSlider
+                                title="Year"
                                 componentId="DynamicRangeSensor"
                                 dataField="year"
                                 stepValue={1}
@@ -99,24 +102,30 @@ function App() {
                         <div id="selected-filters">
                             <SelectedFilters
                                 showClearAll={true}
-                                clearAllLabel="Clear filters" />
+                                clearAllLabel="Clear filters"/>
                         </div>
 
                         <div>
                             <ReactiveList
+                                dataField="title"
                                 react={{
                                     "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "FacetFilter", "DateSensor"]
                                 }}
                                 componentId="SearchResult"
+                                scrollOnChange={false}
                             >
                                 {({data, error, loading}) => (
                                     <ResultListWrapper>
                                         {
                                             data.map(item => (
-                                                <ResultList key={item._id}>
+                                                <ResultList
+                                                    key={item._id}
+                                                    href={item._id}
+                                                    className="result-item">
                                                     <ResultList.Image src={item.imageLink}/>
                                                     <ResultList.Content>
                                                         <ResultList.Title
+                                                            className="result-item-title"
                                                             dangerouslySetInnerHTML={{
                                                                 __html: item.title
                                                             }}
@@ -126,7 +135,7 @@ function App() {
                                                                 __html: !item.about ? "-- No description --" : item.about
                                                             }}
                                                         />
-                                                            {/*<p>{item.about}</p>
+                                                        {/*<p>{item.about}</p>
                                                             <a href={item.uri}>Source</a>*/}
                                                         {/*</ResultList.Description>*/}
                                                         <a href={item.uri}>Source</a>
