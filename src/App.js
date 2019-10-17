@@ -120,7 +120,7 @@ function App() {
                                             data.map(item => (
                                                 <ResultList
                                                     key={item._id}
-                                                    href={item._id}
+                                                    href={"/oer/" + item._id}
                                                     className="result-item">
                                                     <ResultList.Image src={item.imageLink}/>
                                                     <ResultList.Content>
