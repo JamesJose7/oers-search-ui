@@ -76,18 +76,21 @@ class Item extends React.Component {
 
                             <div className="row">
                                 <ul className="oer-details">
-                                    <li>{oer.materialType}</li>
-                                    <li>{oer.date}</li>
-                                    <li>{oer.views}</li>
+                                    <li><b>Material: </b>{oer.materialType}</li>
+                                    <li><b>Published on: </b>{oer.date}</li>
+                                    <li><b>Views: </b>{oer.views}</li>
                                 </ul>
                             </div>
-                            <div className="row">
+                            <div className="row oer-content">
                                 <img src={oer.imageLink}
                                      className="col-md-3 oer-image"
                                      alt={oer.title}/>
-                                <p className="col-md-9 oer-description">
-                                    {oer.about ? oer.about : "No description"}
-                                </p>
+                                     <div className="col-md-9">
+                                         <p className="oer-description">
+                                             {oer.about ? oer.about : "No description"}
+                                         </p>
+                                         <a href={oer.uri} className="btn btn-dark">Source</a>
+                                     </div>
                             </div>
                         </div>
                         // If there is a delay in data, let's let the user know it's loading
