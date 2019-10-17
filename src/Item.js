@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-import {DataSearch} from "@appbaseio/reactivesearch";
 
 class Item extends React.Component {
     //
