@@ -1,5 +1,5 @@
 import React from 'react'
-import './Item.css'
+import './App.css'
 import {DataSearch} from "@appbaseio/reactivesearch";
 
 class Item extends React.Component {
@@ -55,7 +55,7 @@ class Item extends React.Component {
                 <div className="container-fluid">
                     <header className="row app-header">
                         <div className="app-title col-md-3">
-                            <h1>OER Search Engine</h1>
+                            <a href="/"><h1>OER Search Engine</h1></a>
                         </div>
                         <div className="col-md-9">
                             <form action="/" method="get" onSubmit={this.handleSubmit.bind(this)}>

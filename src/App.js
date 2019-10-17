@@ -24,7 +24,7 @@ function App() {
             >
                 <header className="row app-header">
                     <div className="app-title col-md-3">
-                        <h1>OER Search Engine</h1>
+                        <a href="/"><h1>OER Search Engine</h1></a>
                     </div>
                     <div className="search-container col-md-9">
                         <DataSearch
