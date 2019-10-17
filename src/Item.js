@@ -2,10 +2,8 @@ import React from 'react'
 import './App.css'
 
 class Item extends React.Component {
-    //
-
     state = {
-        title: '',
+        query: '',
         isLoading: true,
         oer: {},
         error: null
@@ -38,12 +36,12 @@ class Item extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({title: event.target.value})
+        this.setState({query: event.target.value})
     }
 
     handleSubmit(e) {
         // e.preventDefault()
-        this.setState({title: '"' + this.state.title + '"'})
+        this.setState({query: '"' + this.state.query + '"'})
     }
 
     render() {
@@ -53,14 +51,14 @@ class Item extends React.Component {
             <React.Fragment>
                 <div className="container-fluid">
                     <header className="row app-header">
-                        <div className="app-title col-md-3">
-                            <a href="/"><h1>OER Search Engine</h1></a>
+                        <div className="app-title col-lg-3">
+                            <a href="/"><h1>OERepository</h1></a>
                         </div>
-                        <div className="col-md-9">
+                        <div className="search-container col-lg-9">
                             <form action="/" method="get" onSubmit={this.handleSubmit.bind(this)}>
                                 <input type="text"
                                        className="search-bar"
-                                       value={this.state.title}
+                                       value={this.state.query}
                                        onChange={this.handleChange.bind(this)}
                                        placeholder="Search for OERs"
                                        name="SearchQuery" id="query"/>

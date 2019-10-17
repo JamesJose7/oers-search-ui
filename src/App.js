@@ -23,10 +23,10 @@ function App() {
                 credentials="elastic:h9dVdzv8lTF3krFV7kSWFbQa"
             >
                 <header className="row app-header">
-                    <div className="app-title col-md-3">
-                        <a href="/"><h1>OER Search Engine</h1></a>
+                    <div className="app-title col-lg-3">
+                        <a href="/"><h1>OERepository</h1></a>
                     </div>
-                    <div className="search-container col-md-9">
+                    <div className="search-container col-lg-9">
                         <DataSearch
                             componentId="SearchQuery"
                             dataField={['title', 'about']}
@@ -53,7 +53,7 @@ function App() {
                 </header>
 
                 <div className="row">
-                    <div className="col-md-3 filter-section">
+                    <div className="col-lg-3 filter-section">
                         <div>
                             <DateRange
                                 title="Date picker"
@@ -99,7 +99,7 @@ function App() {
                             />
                         </div>
                     </div>
-                    <div className="col-md-9 results-section">
+                    <div className="col-lg-9 results-section">
                         <div id="selected-filters">
                             <SelectedFilters
                                 showClearAll={true}
