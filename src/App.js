@@ -31,7 +31,7 @@ function App() {
                             componentId="SearchSensor"
                             dataField={['title', 'about']}
                             fieldWeights={[1, 3]}
-                            placeholder="Search for Oers"
+                            placeholder="Search for OERs"
                             autosuggest={false}
                             /*defaultSuggestions={[
                               { label: 'Songwriting', value: 'Songwriting' },
@@ -47,6 +47,7 @@ function App() {
                                 and: ['CategoryFilter', 'SearchFilter', 'SearchResult'],
                             }}
                             showIcon={false}
+                            URLParams={true}
                         />
                     </div>
                 </header>

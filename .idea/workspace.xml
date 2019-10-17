@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="01af4e9b-c4bb-4f30-a8da-4a0798ff322b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -30,6 +28,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -80,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571175127935</updated>
-      <workItem from="1571175129945" duration="25806000" />
+      <workItem from="1571175129945" duration="31337000" />
     </task>
     <task id="LOCAL-00001" summary="Initial search UI with ReactiveBase">
       <created>1571180538714</created>
@@ -117,7 +116,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571265661069</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added css transition for result items on hover">
+      <created>1571321479126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1571321479126</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added routing to display individual page per OER">
+      <created>1571321554012</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571321554012</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +153,8 @@
     <MESSAGE value="Changes for heroku deployment" />
     <MESSAGE value="Changed to AWS elasticsearch deployment for heroku" />
     <MESSAGE value="Improved styles and added functionality to each reactive search item" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved styles and added functionality to each reactive search item" />
+    <MESSAGE value="Added css transition for result items on hover" />
+    <MESSAGE value="Added routing to display individual page per OER" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added routing to display individual page per OER" />
   </component>
 </project>

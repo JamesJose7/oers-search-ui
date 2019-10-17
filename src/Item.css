@@ -1,0 +1,35 @@
+.app-header {
+    background-color: #282c34;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 10px;
+}
+
+.app-title h1 {
+    padding: 0 10px;
+}
+
+.search-bar {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Noto Sans","Ubuntu","Droid Sans","Helvetica Neue",sans-serif;
+    width: 100%;
+    height: 42px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.oer-description {
+    text-align: justify;
+}
+
+.oer-image {
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,.5);
+    box-shadow: 5px 5px 5px -3px rgba(0,0,0,.2);
+}
+
+@media (max-width: 767px) {
+
+}
