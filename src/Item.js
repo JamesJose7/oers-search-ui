@@ -16,7 +16,11 @@ class Item extends React.Component {
         const {params} = this.props.match
         // Where we're fetching data from
         console.log(params.id)
-        fetch('http://localhost:9200/oers/_source/' + params.id)
+        fetch('https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243/oers/_source/' + params.id, {
+            headers: new Headers({
+                'Authorization': 'Basic '+btoa('elastic:h9dVdzv8lTF3krFV7kSWFbQa'),
+            }),
+        })
         // We get the API response and receive data in JSON format...
             .then(response => response.json())
             // ...then we update the users state
