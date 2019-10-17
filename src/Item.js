@@ -59,7 +59,7 @@ class Item extends React.Component {
                                    value={this.state.title}
                                    onChange={this.handleChange.bind(this)}
                                    placeholder="Search for OERs"
-                                   name="SearchSensor" id="query"/>
+                                   name="SearchQuery" id="query"/>
                         </form>
                     </div>
                 </header>

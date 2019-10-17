@@ -28,7 +28,7 @@ function App() {
                     </div>
                     <div className="search-container col-md-9">
                         <DataSearch
-                            componentId="SearchSensor"
+                            componentId="SearchQuery"
                             dataField={['title', 'about']}
                             fieldWeights={[1, 3]}
                             placeholder="Search for OERs"
@@ -57,17 +57,17 @@ function App() {
                         <div>
                             <DateRange
                                 title="Date picker"
-                                componentId="DateSensor"
+                                componentId="DateRange"
                                 dataField="date"/>
                         </div>
 
                         <div>
                             <MultiList
-                                componentId="FacetFilter"
+                                componentId="Categories"
                                 dataField="materialType.keyword"
                                 title="Categories"
                                 react={{
-                                    "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "DateSensor"]
+                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "DateRange"]
                                 }}
                             />
                         </div>
@@ -75,7 +75,7 @@ function App() {
                         <div>
                             <DynamicRangeSlider
                                 title="Year"
-                                componentId="DynamicRangeSensor"
+                                componentId="YearRange"
                                 dataField="year"
                                 stepValue={1}
                                 showHistogram={true}
@@ -86,7 +86,7 @@ function App() {
                                     end: max + '',
                                 })}
                                 react={{
-                                    and: ['SearchSensor', 'SearchResult'],
+                                    and: ['SearchQuery', 'SearchResult'],
                                 }}
                                 /*renderTooltipData={data => (
                                     <h5 style={{
@@ -110,7 +110,7 @@ function App() {
                             <ReactiveList
                                 dataField="title"
                                 react={{
-                                    "and": ["SearchSensor", "RangeSliderSensor", "DynamicRangeSensor", "FacetFilter", "DateSensor"]
+                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "Categories", "DateRange"]
                                 }}
                                 componentId="SearchResult"
                                 scrollOnChange={false}

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01af4e9b-c4bb-4f30-a8da-4a0798ff322b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.js" afterDir="false" />
     </list>
@@ -79,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571175127935</updated>
-      <workItem from="1571175129945" duration="31337000" />
+      <workItem from="1571175129945" duration="31712000" />
     </task>
     <task id="LOCAL-00001" summary="Initial search UI with ReactiveBase">
       <created>1571180538714</created>
@@ -130,7 +129,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571321554012</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added OER data on individual page and search bar mapped to the main page">
+      <created>1571327320906</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1571327320906</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +161,7 @@
     <MESSAGE value="Improved styles and added functionality to each reactive search item" />
     <MESSAGE value="Added css transition for result items on hover" />
     <MESSAGE value="Added routing to display individual page per OER" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added routing to display individual page per OER" />
+    <MESSAGE value="Added OER data on individual page and search bar mapped to the main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added OER data on individual page and search bar mapped to the main page" />
   </component>
 </project>
