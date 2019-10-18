@@ -13,6 +13,7 @@ class Item extends React.Component {
         const {params} = this.props.match
         // Where we're fetching data from
         console.log(params.id)
+        // fetch('http://localhost:9200/oers/_source/' + params.id, {
         fetch('https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243/oers/_source/' + params.id, {
             headers: new Headers({
                 'Authorization': 'Basic '+btoa('elastic:h9dVdzv8lTF3krFV7kSWFbQa'),
@@ -97,7 +98,32 @@ class Item extends React.Component {
                             </div>
                             // If there is a delay in data, let's let the user know it's loading
                         ) : (
-                            <h3>Loading...</h3>
+                            <div className="container container-placeholder">
+                                <div className="row">
+                                    <h1 className="oer-title text line"></h1>
+                                </div>
+
+                                <div className="row">
+                                    <ul className="oer-details oer-details-placeholder">
+                                        <li><div className="text"></div></li>
+                                        <li><div className="text"></div></li>
+                                        <li><div className="text"></div></li>
+                                    </ul>
+                                </div>
+                                <div className="row oer-content">
+                                    <div className="image col-md-3 oer-image">
+                                        <div className="embed-responsive embed-responsive-16by9"></div>
+                                    </div>
+                                    <div className="col-md-9">
+                                        <div className="text line"></div>
+                                        <div className="text line"></div>
+                                        <div className="text line"></div>
+                                        <div className="text"></div>
+                                        <br/>
+                                        <div className="text link">Source</div>
+                                    </div>
+                                </div>
+                            </div>
                         )}
                     </div>
                 </div>
