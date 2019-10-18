@@ -5,10 +5,13 @@ import {
     DataSearch,
     ReactiveList,
     ResultList,
+    ToggleButton,
     DateRange,
+    RangeSlider,
     DynamicRangeSlider,
     SelectedFilters,
-    MultiList
+    MultiList,
+    TagCloud
 } from '@appbaseio/reactivesearch';
 
 const {ResultListWrapper} = ReactiveList;
@@ -44,7 +47,7 @@ function App() {
                             fuzziness={0}
                             debounce={100}
                             react={{
-                                and: ['CategoryFilter', 'SearchFilter', 'SearchResult'],
+                                and: ['CategoryFilter', 'SearchFilter', 'SearchResult', 'SubjectCloud'],
                             }}
                             showIcon={false}
                             URLParams={true}
@@ -55,10 +58,35 @@ function App() {
                 <div className="row">
                     <div className="col-lg-3 filter-section">
                         <div>
+                            <ToggleButton
+                                componentId="Language"
+                                dataField="language.keyword"
+                                data={[
+                                    { label: 'English', value: 'English' },
+                                    // { label: 'English', value: ' English' },
+                                    { label: 'Spanish', value: ' Spanish' },
+                                ]}
+                                title="Language"
+                                multiSelect={true}
+                                showFilter={true}
+                                filterLabel="Language"
+                            />
+                            {/*<SingleList
+                                componentId="Language"
+                                dataField="language.keyword"
+                                title="Language"
+                                react={{
+                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "DateRange", "Views"]
+                                }}
+                            />*/}
+                        </div>
+
+                        <div>
                             <DateRange
                                 title="Date picker"
                                 componentId="DateRange"
-                                dataField="date"/>
+                                dataField="date"
+                                filterLabel="Date range"/>
                         </div>
 
                         <div>
@@ -67,7 +95,7 @@ function App() {
                                 dataField="materialType.keyword"
                                 title="Categories"
                                 react={{
-                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "DateRange"]
+                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "DateRange", "Views", "SubjectCloud"]
                                 }}
                             />
                         </div>
@@ -76,6 +104,7 @@ function App() {
                             <DynamicRangeSlider
                                 title="Year"
                                 componentId="YearRange"
+                                filterLabel="Year"
                                 dataField="year"
                                 stepValue={1}
                                 showHistogram={true}
@@ -86,7 +115,7 @@ function App() {
                                     end: max + '',
                                 })}
                                 react={{
-                                    and: ['SearchQuery', 'SearchResult'],
+                                    and: ['SearchQuery', 'SearchResult', 'SubjectCloud'],
                                 }}
                                 /*renderTooltipData={data => (
                                     <h5 style={{
@@ -96,6 +125,47 @@ function App() {
                                         {data}
                                     </h5>
                                 )}*/
+                            />
+                        </div>
+
+                        <div>
+                            <RangeSlider
+                                componentId="Views"
+                                dataField="views"
+                                title="Views"
+                                range={{
+                                    start: 0,
+                                    end: 500,
+                                }}
+                                rangeLabels={{
+                                    start: '0',
+                                    end: '500',
+                                }}
+                                stepValue={1}
+                                showHistogram={true}
+                                showFilter={true}
+                                interval={2}
+                                react={{
+                                    and: ['SearchQuery', 'SearchResult', 'SubjectCloud'],
+                                }}
+                            />
+                        </div>
+
+                        <div>
+                            <TagCloud
+                                componentId="SubjectCloud"
+                                dataField="subject.keyword"
+                                title="Subjects"
+                                size={32}
+                                showCount={true}
+                                multiSelect={true}
+                                queryFormat="or"
+                                react={{
+                                    and: ['RangeSliderSensor', 'YearRange', 'DateRange', 'Views', 'SearchQuery'],
+                                }}
+                                showFilter={true}
+                                filterLabel="Subject"
+                                loader="Loading ..."
                             />
                         </div>
                     </div>
@@ -110,7 +180,7 @@ function App() {
                             <ReactiveList
                                 dataField="title"
                                 react={{
-                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "Categories", "DateRange"]
+                                    "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "Categories", "DateRange", "Views", "Language", "SubjectCloud"]
                                 }}
                                 componentId="SearchResult"
                                 scrollOnChange={false}
