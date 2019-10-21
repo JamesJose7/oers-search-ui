@@ -239,8 +239,8 @@ class App extends React.Component {
                                                             {/*<p>{item.about}</p>
                                                             <a href={item.uri}>Source</a>*/}
                                                             {/*</ResultList.Description>*/}
-                                                            <p>Views: {item.views}</p>
-                                                            <a href={item.uri}>Source</a>
+                                                            {/*<p>Views: {item.views}</p>*/}
+                                                            {/*<a href={item.uri}>Source</a>*/}
                                                             {/*<p>Id: {item._id}</p>
                                                         <p>Id DB: {item.id}</p>*/}
                                                         </ResultList.Content>
