@@ -3,6 +3,7 @@ import './App.css';
 import $ from 'jquery';
 import axios from "axios";
 import {
+    StateProvider,
     ReactiveBase,
     DataSearch,
     ReactiveList,
@@ -61,7 +62,17 @@ class App extends React.Component {
                     // url="http://localhost:9200"
                     url="https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243"
                     credentials="elastic:h9dVdzv8lTF3krFV7kSWFbQa"
+                    // analytics={true}
                 >
+                    <StateProvider
+                        onChange={({ prevState, nextState }) => {
+                            if (prevState !== nextState) {
+                                window.ga('set', 'page', `/?state=${JSON.stringify(nextState)}`);
+                                window.ga('send', 'pageview');
+                            }
+                        }}
+                    />
+
                     <header className="row app-header">
                         <div className="app-title col-lg-3">
                             <a href="/"><h1>OERepository</h1></a>
