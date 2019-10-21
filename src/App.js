@@ -65,10 +65,13 @@ class App extends React.Component {
                     // analytics={true}
                 >
                     <StateProvider
-                        onChange={({ prevState, nextState }) => {
+                        // render={({ searchState }) => <div>Search State: ${JSON.stringify(searchState)}</div>}
+                        onChange={(prevState, nextState) => {
                             if (prevState !== nextState) {
                                 window.ga('set', 'page', `/?state=${JSON.stringify(nextState)}`);
                                 window.ga('send', 'pageview');
+                                /*console.log('Old State', prevState);
+                                console.log('New State', nextState);*/
                             }
                         }}
                     />
@@ -100,6 +103,10 @@ class App extends React.Component {
                                 }}
                                 showIcon={false}
                                 URLParams={true}
+                                onValueChange={value => {
+                                    window.ga('set', 'page', `/?query=${value}`);
+                                    window.ga('send', 'pageview');
+                                }}
                             />
                         </div>
                     </header>
