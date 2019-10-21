@@ -19,10 +19,12 @@
 
 /* App page styles */
 .app-header {
-    background-color: #282c34;
+    background-color: #1A1B20;
+    /*background-color: #1e66ff;*/
     font-size: calc(10px + 2vmin);
     color: white;
     padding: 10px;
+    box-shadow: 0 5px 5px -1px rgba(0,0,0,.3);
 }
 
 .filter-section {
@@ -84,9 +86,12 @@
     right: 10px;
 }
 
+.filter-slider .rheostat-progress {
+    background-color: #1A1B20 !important;
+}
+
 /* Oer page styles */
 .app-header {
-    background-color: #282c34;
     font-size: calc(10px + 2vmin);
     color: white;
     padding: 10px;
@@ -239,6 +244,13 @@
 
     .search-container {
         padding: 0 !important;
+    }
+
+    .result-item-description {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
     }
 
     .oer-content .oer-image {
