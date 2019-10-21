@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import $ from 'jquery';
+import axios from "axios";
 import {
     ReactiveBase,
     DataSearch,
@@ -31,6 +32,28 @@ class App extends React.Component {
     }
 
     render() {
+        async function updateViews(id) {
+            const response = await axios.post(
+                'https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243/oers/_update/' + id,
+                {
+                    script: {
+                        source: "ctx._source.views += params.ttl",
+                        lang: "painless",
+                        params: {
+                            ttl: 1
+                        }
+                    }
+                },
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Basic ' + btoa('elastic:h9dVdzv8lTF3krFV7kSWFbQa')
+                    }
+
+                }
+            )
+        }
+
         return (
             <div className="App container-fluid">
                 <ReactiveBase
@@ -221,6 +244,7 @@ class App extends React.Component {
                                                     <ResultList
                                                         key={item._id}
                                                         href={"/oer/" + item._id}
+                                                        onClick={() => updateViews(item._id)}
                                                         className="result-item">
                                                         <ResultList.Image src={item.imageLink}/>
                                                         <ResultList.Content>
