@@ -30,6 +30,21 @@ class App extends React.Component {
         $('#filter-section-collapsible').on('show.bs.collapse', function () {
             $('#collapse-filters-button').html('Hide filters<i class="fa fa-angle-up"></i>')
         })
+
+        function closeKeyboard() {
+            $("input").blur()
+            let collapseButton = $("#collapse-filters-button")
+            if (!collapseButton.hasClass("collapsed") && collapseButton.is(':visible')) {
+                collapseButton.click()
+            }
+        }
+
+
+        $('.search-container input').on('keyup', function (e) {
+            if (e.keyCode === 13) {
+                closeKeyboard()
+            }
+        });
     }
 
     render() {
@@ -53,13 +68,6 @@ class App extends React.Component {
 
                 }
             )
-        }
-
-        function closeKeyboard() {
-            $("input").blur()
-            if (!$("#collapse-filters-button").hasClass("collapsed")) {
-                $("#collapse-filters-button").click()
-            }
         }
 
         return (
@@ -110,7 +118,6 @@ class App extends React.Component {
                                 }}
                                 showIcon={false}
                                 URLParams={true}
-                                onKeyPress={args => closeKeyboard()}
                                 onValueChange={value => {
                                     window.ga('set', 'page', `/?query=${value}`);
                                     window.ga('send', 'pageview');
