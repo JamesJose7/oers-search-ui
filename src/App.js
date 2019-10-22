@@ -55,6 +55,13 @@ class App extends React.Component {
             )
         }
 
+        function closeKeyboard() {
+            $("input").blur()
+            if (!$("#collapse-filters-button").hasClass("collapsed")) {
+                $("#collapse-filters-button").click()
+            }
+        }
+
         return (
             <div className="App container-fluid">
                 <ReactiveBase
@@ -103,6 +110,7 @@ class App extends React.Component {
                                 }}
                                 showIcon={false}
                                 URLParams={true}
+                                onKeyPress={args => closeKeyboard()}
                                 onValueChange={value => {
                                     window.ga('set', 'page', `/?query=${value}`);
                                     window.ga('send', 'pageview');
