@@ -176,6 +176,7 @@ class App extends React.Component {
                                     react={{
                                         "and": ["SearchQuery", "RangeSliderSensor", "YearRange", "DateRange", "Views", "SubjectCloud"]
                                     }}
+                                    URLParams={true}
                                 />
                             </div>
 
