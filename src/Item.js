@@ -85,7 +85,7 @@ class Item extends React.Component {
                                     </ul>
                                 </div>
                                 <div className="row oer-content">
-                                    <img src={oer.imageLink}
+                                    <img src={oer.imageLink ? oer.imageLink : "https://via.placeholder.com/240x320/20639b/eeeeee?text=No%20cover"}
                                          className="col-md-3 oer-image"
                                          alt={oer.title}/>
                                     <div className="col-md-9">

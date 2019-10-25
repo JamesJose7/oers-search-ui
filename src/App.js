@@ -280,7 +280,8 @@ class App extends React.Component {
                                                         href={"/oer/" + item._id}
                                                         onClick={() => updateViews(item._id)}
                                                         className="result-item">
-                                                        <ResultList.Image src={item.imageLink}/>
+                                                        <ResultList.Image
+                                                            src={item.imageLink ? item.imageLink : "https://via.placeholder.com/240x320/20639b/eeeeee?text=No%20cover"}/>
                                                         <ResultList.Content>
                                                             <ResultList.Title
                                                                 className="result-item-title"
