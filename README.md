@@ -1,3 +1,8 @@
+# Authors
+
+- [José Eguiguren](https://github.com/JamesJose7/) (developer)
+- [Nelson Piedra](https://investigacion.utpl.edu.ec/es/nopiedra) (supervisor)
+
 # Setup guide
 
 This project requires a backend powered by Elasticsearch and this codebase is the frontend that consumes it.
