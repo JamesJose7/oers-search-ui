@@ -57,6 +57,16 @@ Execute the following scripts:
 > - NodeJS [Download](https://nodejs.org/en/download/)
 > - Elasticsearch server running
 
+### Configuration
+
+Edit the file named ``.env.development`` to change the connection parameters based on your Elasticsearch instance if needed.
+
+Default configuration:
+```
+REACT_APP_ELASTICSEARCH_URL=http://localhost:9200
+REACT_APP_ELASTICSEARCH_CREDENTIALS=
+```
+
 ### Running the application
 
 The following documentation is provided by [Create React App](https://github.com/facebook/create-react-app).
