@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import $ from 'jquery';
-import OersApi from './elasticsearch/oersApi'
+import OersApi from '../elasticsearch/oersApi'
 import {
     ELASTIC_URL,
     ELASTIC_CREDENTIALS,
-} from './elasticsearch/oersApi'
+} from '../elasticsearch/oersApi'
 import {
     StateProvider,
     ReactiveBase,
