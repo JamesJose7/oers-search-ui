@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
 import './index.css';
 import App from './App';
-import Item from './Item';
+import Oer from './oers/Oer';
 import Notfound from "./Notfound";
 import * as serviceWorker from './serviceWorker';
 
@@ -15,7 +15,7 @@ const routing = (
         <div>
             <Switch>
                 <Route exact path="/" component={App} />
-                <Route path="/oer/:id" component={Item} />
+                <Route path="/oer/:id" component={Oer} />
                 <Route component={Notfound} />
             </Switch>
         </div>

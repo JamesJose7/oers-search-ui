@@ -1,7 +1,8 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
+import OersApi from '../elasticsearch/oersApi.js'
 
-class Item extends React.Component {
+class Oer extends React.Component {
     state = {
         query: '',
         isLoading: true,
@@ -11,17 +12,12 @@ class Item extends React.Component {
 
     fecthOer() {
         const {params} = this.props.match
-        // Where we're fetching data from
-        console.log(params.id)
-        // fetch('http://localhost:9200/oers/_source/' + params.id, {
-        fetch('https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243/oers/_source/' + params.id, {
-            headers: new Headers({
-                'Authorization': 'Basic '+btoa('elastic:h9dVdzv8lTF3krFV7kSWFbQa'),
-            }),
-        })
-        // We get the API response and receive data in JSON format...
-            .then(response => response.json())
-            // ...then we update the users state
+        // Get oer document based on ID
+        OersApi
+            .getDocument(params.id)
+            // Retrieve the data from the response
+            .then(response => response.data)
+            // Update the state once it finishes
             .then(data =>
                 this.setState({
                     oer: data,
@@ -133,4 +129,4 @@ class Item extends React.Component {
     }
 }
 
-export default Item
+export default Oer

@@ -1,7 +1,11 @@
 import React from 'react';
 import './App.css';
 import $ from 'jquery';
-import axios from "axios";
+import OersApi from './elasticsearch/oersApi'
+import {
+    ELASTIC_URL,
+    ELASTIC_CREDENTIALS,
+} from './elasticsearch/oersApi'
 import {
     StateProvider,
     ReactiveBase,
@@ -31,52 +35,28 @@ class App extends React.Component {
             $('#collapse-filters-button').html('Hide filters<i class="fa fa-angle-up"></i>')
         })
 
-        function closeKeyboard() {
+        // Bind function to close keyboard to search bar on mobile devices once the enter key is pressed
+        function closeMobileKeyboard() {
             $("input").blur()
             let collapseButton = $("#collapse-filters-button")
             if (!collapseButton.hasClass("collapsed") && collapseButton.is(':visible')) {
                 collapseButton.click()
             }
         }
-
-
         $('.search-container input').on('keyup', function (e) {
             if (e.keyCode === 13) {
-                closeKeyboard()
+                closeMobileKeyboard()
             }
         });
     }
 
     render() {
-        async function updateViews(id) {
-            const response = await axios.post(
-                'https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243/oers/_update/' + id,
-                {
-                    script: {
-                        source: "ctx._source.views += params.ttl",
-                        lang: "painless",
-                        params: {
-                            ttl: 1
-                        }
-                    }
-                },
-                {
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': 'Basic ' + btoa('elastic:h9dVdzv8lTF3krFV7kSWFbQa')
-                    }
-
-                }
-            )
-        }
-
         return (
             <div className="App container-fluid">
                 <ReactiveBase
                     app="oers"
-                    // url="http://localhost:9200"
-                    url="https://eaeacc6124194914b83ee5a86cd54f03.us-east-1.aws.found.io:9243"
-                    credentials="elastic:h9dVdzv8lTF3krFV7kSWFbQa"
+                    url={ELASTIC_URL}
+                    credentials={ELASTIC_CREDENTIALS}
                     // analytics={true}
                 >
                     <StateProvider
@@ -278,7 +258,7 @@ class App extends React.Component {
                                                     <ResultList
                                                         key={item._id}
                                                         href={"/oer/" + item._id}
-                                                        onClick={() => updateViews(item._id)}
+                                                        onClick={() => OersApi.updateDocumentViews(item._id)}
                                                         className="result-item">
                                                         <ResultList.Image
                                                             src={item.imageLink ? item.imageLink : "https://via.placeholder.com/240x320/20639b/eeeeee?text=No%20cover"}/>
