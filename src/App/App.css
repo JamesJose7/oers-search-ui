@@ -71,7 +71,7 @@
     font-weight: lighter;
 }
 
-#collapse-filters-button:hover {
+#collapse-filters-button:hover, #collapse-filters-button:active, #collapse-filters-button:focus {
     text-decoration: none;
 }
 
