@@ -71,6 +71,7 @@ Default configuration:
 REACT_APP_ELASTICSEARCH_URL=http://localhost:9200
 REACT_APP_ELASTICSEARCH_CREDENTIALS=
 ```
+In case you need to setup credentials, they require basic authorization format as such: ``user:password``.
 
 ### Running the application
 
