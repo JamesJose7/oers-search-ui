@@ -68,8 +68,6 @@ class App extends React.Component {
                             if (prevState !== nextState) {
                                 window.ga('set', 'page', `/?state=${JSON.stringify(nextState)}`);
                                 window.ga('send', 'pageview');
-                                /*console.log('Old State', prevState);
-                                console.log('New State', nextState);*/
                             }
                         }}
                     />
@@ -87,6 +85,7 @@ class App extends React.Component {
                     </div>
                     <div className="row">
                         <div className="col-lg-3 filter-section collapse show" id="filter-section-collapsible">
+                            {/* Custom filters section */}
                             <LanguageFilter/>
                             <DatePicker/>
                             <ViewsRange/>
@@ -96,6 +95,7 @@ class App extends React.Component {
                             <SubjectWordCloud/>
                         </div>
                         <div className="col-lg-9 results-section">
+                            {/* Search results section */}
                             <div id="selected-filters">
                                 <SelectedFilters
                                     showClearAll={true}

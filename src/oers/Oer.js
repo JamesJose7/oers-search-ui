@@ -10,7 +10,7 @@ class Oer extends React.Component {
         error: null
     }
 
-    fecthOer() {
+    fetchOer() {
         const {params} = this.props.match
         // Get oer document based on ID
         OersApi
@@ -29,7 +29,7 @@ class Oer extends React.Component {
     }
 
     componentDidMount() {
-        this.fecthOer()
+        this.fetchOer()
     }
 
     handleChange(event) {
@@ -62,11 +62,12 @@ class Oer extends React.Component {
                             </form>
                         </div>
                     </header>
+
                     <div>
-                        {/*Display a message if we encounter an error*/}
+                        {/*Display a message if an error occurs*/}
                         {error ? <p>{error.message}</p> : null}
 
-                        {/*// Here's our data check*/}
+                        {/* Display data once it's loaded */}
                         {!isLoading ? (
                             <div className="container">
                                 <div className="row">
@@ -92,34 +93,9 @@ class Oer extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                            // If there is a delay in data, let's let the user know it's loading
+                            // If there is a delay in data, show the placeholder
                         ) : (
-                            <div className="container container-placeholder">
-                                <div className="row">
-                                    <h1 className="oer-title text line"></h1>
-                                </div>
-
-                                <div className="row">
-                                    <ul className="oer-details oer-details-placeholder">
-                                        <li><div className="text"></div></li>
-                                        <li><div className="text"></div></li>
-                                        <li><div className="text"></div></li>
-                                    </ul>
-                                </div>
-                                <div className="row oer-content">
-                                    <div className="image col-md-3 oer-image">
-                                        <div className="embed-responsive embed-responsive-16by9"></div>
-                                    </div>
-                                    <div className="col-md-9">
-                                        <div className="text line"></div>
-                                        <div className="text line"></div>
-                                        <div className="text line"></div>
-                                        <div className="text"></div>
-                                        <br/>
-                                        <div className="text link">Source</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <PlaceholderOer/>
                         )}
                     </div>
                 </div>
@@ -127,6 +103,37 @@ class Oer extends React.Component {
 
         )
     }
+}
+
+function PlaceholderOer() {
+    return (
+        <div className="container container-placeholder">
+            <div className="row">
+                <h1 className="oer-title text line"></h1>
+            </div>
+
+            <div className="row">
+                <ul className="oer-details oer-details-placeholder">
+                    <li><div className="text"></div></li>
+                    <li><div className="text"></div></li>
+                    <li><div className="text"></div></li>
+                </ul>
+            </div>
+            <div className="row oer-content">
+                <div className="image col-md-3 oer-image">
+                    <div className="embed-responsive embed-responsive-16by9"></div>
+                </div>
+                <div className="col-md-9">
+                    <div className="text line"></div>
+                    <div className="text line"></div>
+                    <div className="text line"></div>
+                    <div className="text"></div>
+                    <br/>
+                    <div className="text link">Source</div>
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Oer

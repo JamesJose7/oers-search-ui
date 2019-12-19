@@ -1,17 +1,6 @@
 import axios from 'axios'
 import config from "../util/config";
 
-/*export default {
-    urls() {
-        return {
-            login: `${config.backendUrl}/koboApi/api/v1/login`,
-            userForms: `${config.backendUrl}/koboApi/api/v1/userForms`,
-            formMetadata: (id, token) => `${config.backendUrl}/koboApi/api/v1/formMetadata/${id}?token=${token}`,
-            formSubmissions: (id, token) => `${config.backendUrl}/koboApi/api/v1/submissions/${id}?token=${token}`,
-            downloadSubmissions: ({ koboUser, id, format }) => `https://kc.kobotoolbox.org/${koboUser}/reports/${id}/export.${format}`,
-        }
-    }
-}*/
 export const ELASTIC_URL = config.elasticUrl
 export const ELASTIC_CREDENTIALS = config.elasticCredentials ? config.elasticCredentials : ''
 
