@@ -27,9 +27,11 @@ Please follow the official documentation to properly install both Elasticsearch 
 > - NodeJS [Download](https://nodejs.org/en/download/)
 > - Elasticsearch server running
 
-Clone the following repository that will upload test data in your Elasticsearch instance:
+Clone the following [repository](https://github.com/JamesJose7/elasticsearch-dummy-uploader.git) that will upload test data in your Elasticsearch instance:
 
-[https://github.com/JamesJose7/elasticsearch-dummy-uploader.git](https://github.com/JamesJose7/elasticsearch-dummy-uploader.git)
+```bash
+git clone https://github.com/JamesJose7/elasticsearch-dummy-uploader.git
+```
 
 If you changed the port, domain, or your instance requires authentication, please make the appropriate changes in ``index.js``
 
